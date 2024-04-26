@@ -9,8 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Coffee.unity
+    guid: 0d24b8117f7f17049a8a99440db57500
+  - enabled: 1
+    path: Assets/Scenes/Stone.unity
+    guid: f1453738f601fe94686592151339f4b6
+  - enabled: 1
+    path: Assets/Scenes/Note.unity
+    guid: 42013fb4fb8cfd4418b38cfaaedacf77
+  - enabled: 1
+    path: Assets/Scenes/InspectStone.unity
+    guid: 37f1856e859a73049992c8a1d9852775
+  - enabled: 1
+    path: Assets/Scenes/Puzzle.unity
+    guid: 90cce657135d95744a23d9d757583e79
+  - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: cf330e5d72ec8446aad4e72e7235b258
+  - enabled: 1
+    path: Assets/Scenes/ThrowStone.unity
+    guid: 29fc133e2a2035d4ca7570a087122319
   - enabled: 1
     path: Assets/Scenes/MainRoom.unity
     guid: 7f10881a1a45e4463b3d43f0e401a604
