@@ -758,7 +758,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WIP
+          m_StringArgument: Puzzle
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &661836903
@@ -1025,7 +1025,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WIP
+          m_StringArgument: Note
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &884039983
@@ -1292,7 +1292,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WIP
+          m_StringArgument: Coffee
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1206215473
@@ -1739,7 +1739,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WIP
+          m_StringArgument: Stone
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1944852924
