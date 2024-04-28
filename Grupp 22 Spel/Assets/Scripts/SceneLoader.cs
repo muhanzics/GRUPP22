@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public float delay = 2f;
+    public float delay = 0f;
     private string sceneToLoad;
     public void LoadScene(string sceneName)
     {

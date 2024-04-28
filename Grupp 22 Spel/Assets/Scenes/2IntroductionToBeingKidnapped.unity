@@ -191,6 +191,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &137048767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1676318146830899648, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002378205570334873, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1120.7982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 476.78284
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.7410436
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540567785630723993, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+--- !u!114 &137048768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1676318146830899648, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
+  m_PrefabInstance: {fileID: 137048767}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d707395b1d113974fbf479232fea2c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036401665
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +504,7 @@ GameObject:
   - component: {fileID: 1357585717}
   - component: {fileID: 1357585720}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Begin_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,16 +574,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: VideoManager, Assembly-CSharp
-        m_MethodName: PlayVideo
-        m_Mode: 1
+      - m_Target: {fileID: 137048768}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3Intro
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1357585718
@@ -865,3 +937,4 @@ SceneRoots:
   - {fileID: 1763048840}
   - {fileID: 52607216}
   - {fileID: 1369793349}
+  - {fileID: 137048767}
