@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class Puzzle : MonoBehaviour
 {
-    public int rows = 3; // Number of rows
-    public int columns = 3; // Number of columns
-    public GameObject tilePrefab; // Your UI prefab
-    public Transform tilesParent; // Assign this to your UI Panel (TilesPanel)
+    public int rows = 3;
+    public int columns = 3; 
+    public GameObject tilePrefab; 
+    public Transform tilesParent; 
     public Sprite spriteX;
     public Sprite spriteO;
 
@@ -15,30 +15,19 @@ public class Puzzle : MonoBehaviour
     void Start()
     {
         grid = new GameObject[columns, rows];
-        ClearTilesPanel(); // Clear any existing tiles
         GenerateCustomGrid();
+        RandomizeInitialState(8);
     }
-
-    // Clear all child GameObjects in the tilesParent panel
-    void ClearTilesPanel()
-    {
-        foreach (Transform child in tilesParent)
-        {
-            Destroy(child.gameObject);
-        }
-    }
-
     void GenerateCustomGrid()
     {
-        float cellWidth = 100f; // Adjust as needed
-        float cellHeight = 100f; // Adjust as needed
-        float spacing = 150f; // Adjust spacing as needed
+        float cellWidth = 120f; 
+        float cellHeight = 120f; 
+        float spacing = 150f; 
         Vector2 startPosition = new Vector2(
             -(columns - 1) * (cellWidth + spacing) / 2,
             -(rows - 1) * (cellHeight + spacing) / 2
         );
 
-        // Calculate the center tile coordinates
         int centerX = columns / 2;
         int centerY = rows / 2;
 
@@ -46,23 +35,19 @@ public class Puzzle : MonoBehaviour
         {
             for (int y = 0; y < rows; y++)
             {
-                // Skip the center tile (middle of the grid)
                 if (x == centerX && y == centerY) continue;
 
-                // Instantiate the tile prefab and set it as a child of the tilesParent
                 GameObject tile = Instantiate(tilePrefab, tilesParent);
                 tile.GetComponent<RectTransform>().anchoredPosition = new Vector2(
                     startPosition.x + x * (cellWidth + spacing),
                     startPosition.y + y * (cellHeight + spacing)
                 );
 
-                // Set the default sprite for the tile
                 Image tileImage = tile.GetComponent<Image>();
                 tileImage.sprite = spriteX;
 
-                // Add the click event listener to toggle the tile's sprite
                 Button tileButton = tile.GetComponent<Button>();
-                int capturedX = x, capturedY = y; // Capture indices for the closure
+                int capturedX = x, capturedY = y; 
                 tileButton.onClick.AddListener(() => ToggleTile(capturedX, capturedY));
 
                 grid[x, y] = tile;
@@ -77,10 +62,10 @@ public class Puzzle : MonoBehaviour
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
         }
-        ToggleAdjacent(x - 1, y); // Left
-        ToggleAdjacent(x + 1, y); // Right
-        ToggleAdjacent(x, y - 1); // Below
-        ToggleAdjacent(x, y + 1); // Above
+        ToggleAdjacent(x - 1, y); 
+        ToggleAdjacent(x + 1, y); 
+        ToggleAdjacent(x, y - 1); 
+        ToggleAdjacent(x, y + 1); 
     }
     void ToggleAdjacent(int x, int y)
     {
@@ -89,5 +74,15 @@ public class Puzzle : MonoBehaviour
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
         }
+    }
+void RandomizeInitialState(int shuffleCount)
+    {
+        for (int i = 0; i < shuffleCount; i++)
+        {
+            int randomX = Random.Range(0, columns);
+            int randomY = Random.Range(0, rows);
+            ToggleTile(randomX, randomY);
+        }
+        grid[columns / 2, rows / 2].GetComponent<Image>().sprite = spriteX;
     }
 }
