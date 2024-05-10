@@ -10,14 +10,22 @@ public class MainRoomSettingsController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
 
     private VideoPlayer videoPlayer;
-    public Button button;
+    public Button playpausebutton;
     public Sprite playButton;
     public Sprite pauseButton;
+    private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if(videoPlayer == null)
         videoPlayer = gameObject.GetComponent<VideoPlayer>();
+        if (playpausebutton != null)
+            // Tilldela knappens nuvarande sprite till soundOnImage vid start
+            //pauseButton = playpausebutton.image.sprite;
+
+        playpausebutton.onClick.AddListener(changePlayPause);
     }
 
     // Update is called once per frame
@@ -39,22 +47,20 @@ public class MainRoomSettingsController : MonoBehaviour
     {
         if (videoPlayer != null)
         {
-            if (videoPlayer.isPlaying == true)
+            if (isPaused)
             {
                 videoPlayer.Play();
-                button.image.sprite = playButton;
+                playpausebutton.image.sprite = playButton;
+                isPaused = false;
             }
             else
             {
                 videoPlayer.Pause();
-                button.image.sprite = pauseButton;
+                playpausebutton.image.sprite = pauseButton;
+                isPaused = true;
             }
 
         }
     }
 }
-        
-  
-    
-   
 
