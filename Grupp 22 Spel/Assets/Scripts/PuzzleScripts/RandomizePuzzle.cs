@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class PuzzleController : MonoBehaviour
+public class RandomizePuzzle : MonoBehaviour
 {
     public int rows = 3;
     public int columns = 3;
@@ -114,6 +114,7 @@ public class PuzzleController : MonoBehaviour
             int randomY = Random.Range(0, rows);
             ToggleSingleTile(randomX, randomY);
         }
+
 
         grid[columns / 2, rows / 2].GetComponent<Image>().sprite = spriteO;
     }
