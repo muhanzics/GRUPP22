@@ -272,7 +272,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502890802}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33e5e460745faf54da71714cf2dcf1fc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fdd1b5fb565feb647bf10e01682ccb90, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -446,7 +446,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737606234}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33e5e460745faf54da71714cf2dcf1fc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fdd1b5fb565feb647bf10e01682ccb90, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -883,7 +883,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796740128}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33e5e460745faf54da71714cf2dcf1fc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fdd1b5fb565feb647bf10e01682ccb90, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1945,7 +1945,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545094023}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33e5e460745faf54da71714cf2dcf1fc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fdd1b5fb565feb647bf10e01682ccb90, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1967,7 +1967,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -2145,7 +2145,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728724268}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33e5e460745faf54da71714cf2dcf1fc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fdd1b5fb565feb647bf10e01682ccb90, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
