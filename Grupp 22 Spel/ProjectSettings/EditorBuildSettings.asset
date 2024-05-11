@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/2IntroductionToBeingKidnapped.unity
     guid: 0d5bed2535fc4554f883ac916e833486
   - enabled: 1
+    path: Assets/Scenes/3.0Intro.unity
+    guid: 3aa2e5e7f786131478a1cc631388b662
+  - enabled: 1
     path: Assets/Scenes/3Intro.unity
     guid: cf330e5d72ec8446aad4e72e7235b258
   - enabled: 1

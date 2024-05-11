@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.Sprites;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class MainRoomSettingsController : MonoBehaviour
 {
@@ -62,5 +63,31 @@ public class MainRoomSettingsController : MonoBehaviour
 
         }
     }
+
+    public void PlayVideoSpeed()
+    {
+        if (videoPlayer)
+        {
+            if (videoPlayer.playbackSpeed == 1.0f)
+            {
+                videoPlayer.playbackSpeed = 4.0f;
+            }
+            else
+            {
+                videoPlayer.playbackSpeed = 1.0f;
+            }
+        }
+    }
+
+    public void FastForward()
+    {
+        videoPlayer.time += 5f; // Adjust the value as needed for fast forward speed
+    }
+
+    public void Rewind()
+    {
+        videoPlayer.time -= 5f; // Adjust the value as needed for rewind speed
+    }
+
 }
 
