@@ -2,29 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainRoomSettingsController : MonoBehaviour
+public class SettingsController : MonoBehaviour
 {
-    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject settingsPanels;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ShowSettingsPanel()
     {
-        
+        settingsPanels.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CloseSettingsPanel()
     {
-    } 
-
-    public void showSettingsPanel()
-    {
-        settingsPanel.SetActive(true);
-    }
-
-    public void closeSettingsPanel()
-    {
-        settingsPanel.SetActive(false);
+        settingsPanels.SetActive(false);
     }
    
 }
