@@ -51,13 +51,13 @@ public class MainRoomSettingsController : MonoBehaviour
             if (isPaused)
             {
                 videoPlayer.Play();
-                playpausebutton.image.sprite = playButton;
+                playpausebutton.image.sprite = pauseButton;
                 isPaused = false;
             }
             else
             {
                 videoPlayer.Pause();
-                playpausebutton.image.sprite = pauseButton;
+                playpausebutton.image.sprite = playButton;
                 isPaused = true;
             }
 
