@@ -11,7 +11,9 @@ public class Passcode : MonoBehaviour
     string Nr = null;
     int NrIndex = 0;
     string alpha;
-    public Text UiText = null; 
+    public Text UiText = null;
+    public AudioSource audioData;
+
 
     public void CodeFunction(string Numbers)
     {
@@ -19,6 +21,7 @@ public class Passcode : MonoBehaviour
         Nr = Nr + Numbers;
         UiText.text = Nr;
     }
+
     public void Enter()
     {
         if (Nr == Code)
@@ -30,7 +33,9 @@ public class Passcode : MonoBehaviour
         else
         {
             Debug.Log("It's not working");
+            //audioData.Play();
         }
+
     }
     public void Delete()
     {
@@ -39,3 +44,4 @@ public class Passcode : MonoBehaviour
         UiText.text = Nr;
     }
 }
+
