@@ -13,4 +13,7 @@ public class SetPanelTrue : MonoBehaviour
     public void TogglePanel() {
         panel.SetActive(!panel.activeSelf);
     }
+    public void TogglePanelOff() {
+        panel.SetActive(panel.activeSelf);
+    }
 }
