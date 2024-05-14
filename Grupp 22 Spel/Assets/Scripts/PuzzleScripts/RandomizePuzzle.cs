@@ -85,40 +85,40 @@ public class RandomizePuzzle : MonoBehaviour
     }
 
     void RandomizeInitialState(int minimumXSwitches)
+{
+    int xCount = 0, oCount = 0;
+    EnsureXCount(minimumXSwitches, ref xCount, ref oCount);
+
+    int totalTiles = rows * columns;
+    int targetXCount = Mathf.Max(minimumXSwitches, (int)(totalTiles * 0.6f));
+
+    EnsureXCount(targetXCount, ref xCount, ref oCount);
+
+    int finalSwitches = Random.Range(minimumXSwitches, totalTiles / 2);
+    for (int i = 0; i < finalSwitches; i++)
     {
-        int xCount = 0, oCount = 0;
-
-        for (int i = 0; i < minimumXSwitches; i++)
-        {
-            int randomX = Random.Range(0, columns);
-            int randomY = Random.Range(0, rows);
-            ToggleSingleTile(randomX, randomY);
-        }
-
-        CountTiles(ref xCount, ref oCount);
-
-        int totalTiles = rows * columns;
-        int targetXCount = Mathf.Max(minimumXSwitches, (int)(totalTiles * 0.6f));
-        while (xCount <= oCount || xCount < targetXCount)
-        {
-            int randomX = Random.Range(0, columns);
-            int randomY = Random.Range(0, rows);
-            ToggleSingleTile(randomX, randomY);
-            CountTiles(ref xCount, ref oCount);
-        }
-
-        int finalSwitches = Random.Range(minimumXSwitches, totalTiles / 2);
-        for (int i = 0; i < finalSwitches; i++)
-        {
-            int randomX = Random.Range(0, columns);
-            int randomY = Random.Range(0, rows);
-            ToggleSingleTile(randomX, randomY);
-        }
-
-
-        grid[columns / 2, rows / 2].GetComponent<Image>().sprite = spriteO;
+        int randomX = Random.Range(0, columns);
+        int randomY = Random.Range(0, rows);
+        ToggleSingleTile(randomX, randomY);
     }
+}
+void EnsureXCount(int targetXCount, ref int xCount, ref int oCount)
+{
+    CountTiles(ref xCount, ref oCount);
 
+    while (xCount < targetXCount)
+    {
+        int randomX = Random.Range(0, columns);
+        int randomY = Random.Range(0, rows);
+        Image tileImage = grid[randomX, randomY].GetComponent<Image>();
+        if (tileImage.sprite != spriteX)
+        {
+            tileImage.sprite = spriteX;
+            xCount++;
+            oCount--;
+        }
+    }
+}
     void ToggleSingleTile(int x, int y)
     {
         if (grid[x, y] != null)
@@ -129,26 +129,26 @@ public class RandomizePuzzle : MonoBehaviour
     }
 
     void CountTiles(ref int xCount, ref int oCount)
-    {
-        xCount = 0;
-        oCount = 0;
+{
+    xCount = 0;
+    oCount = 0;
 
-        for (int x = 0; x < columns; x++)
+    for (int x = 0; x < columns; x++)
+    {
+        for (int y = 0; y < rows; y++)
         {
-            for (int y = 0; y < rows; y++)
+            Image tileImage = grid[x, y].GetComponent<Image>();
+            if (tileImage.sprite == spriteX)
             {
-                Image tileImage = grid[x, y].GetComponent<Image>();
-                if (tileImage.sprite == spriteX)
-                {
-                    xCount++;
-                }
-                else
-                {
-                    oCount++;
-                }
+                xCount++;
+            }
+            else
+            {
+                oCount++;
             }
         }
     }
+}
 
     void CheckWinCondition()
     {
