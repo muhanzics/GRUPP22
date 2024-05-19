@@ -17,7 +17,10 @@ public class MenuSettingsController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
 
     void Start()
-    { 
+    {
+
+        button = GetComponent<Button>();
+
         if (button != null)
         { 
             // Tilldela knappens nuvarande sprite till soundOnImage vid start
@@ -57,24 +60,21 @@ public class MenuSettingsController : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource is not assigned.");
             return;
         }
 
-        Debug.Log("ButtonClicked called"); // Debug-logg för felsökning
 
         if (isOn)
         {
             button.image.sprite = soundOffImage;
             isOn = false;
             audioSource.mute = true;
-            Debug.Log("Sound turned off");
+            
         } else
         {
             button.image.sprite = soundOnImage;
             isOn = true;
             audioSource.mute = false;
-            Debug.Log("Sound turned on");
         }
     }
 
