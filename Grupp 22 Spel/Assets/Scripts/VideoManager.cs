@@ -11,31 +11,55 @@ public class VideoManager : MonoBehaviour
     public Button playVideoButton;
     public Canvas CanvasMain;
     public Canvas VideoCanvas;
+    private static bool hasPlayedOnce = false; 
+    private double lastFrameTime; 
     void Start()
     {
         playVideoButton.onClick.AddListener(PlayVideo);
         videoPlayer.loopPointReached += EndReached;
         VideoCanvas.enabled = false;
-        
+
+        if (hasPlayedOnce)
+        {
+            lastFrameTime = PlayerPrefs.GetFloat("LastFrameTime", 0);
+            videoPlayer.time = lastFrameTime;
+            videoPlayer.Pause();
+        }
     }
-    public void PlayVideo() {
-        CanvasMain.enabled = false;
-        VideoCanvas.enabled = true;
-        videoPlayer.Play();
-        playVideoButton.gameObject.SetActive(false);
+
+    public void PlayVideo()
+    {
+        if (!hasPlayedOnce)
+        {
+            CanvasMain.enabled = false;
+            VideoCanvas.enabled = true;
+            videoPlayer.Play();
+            playVideoButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            CanvasMain.enabled = false;
+            VideoCanvas.enabled = true;
+            videoPlayer.time = lastFrameTime;
+            videoPlayer.Pause();
+        }
     }
-    public void EndReached (VideoPlayer vp) {
-        CanvasMain.enabled = true;
-        VideoCanvas.enabled = false;
-        playVideoButton.gameObject.SetActive(true);
+
+    public void EndReached(VideoPlayer vp)
+    {
+        lastFrameTime = videoPlayer.frameCount / videoPlayer.frameRate;
+        videoPlayer.time = lastFrameTime;
+        videoPlayer.Pause();
+        hasPlayedOnce = true;
+
+        PlayerPrefs.SetInt("VideoPlayedOnce", 1);
+        PlayerPrefs.SetFloat("LastFrameTime", (float)lastFrameTime);
+        PlayerPrefs.Save();
     }
-    public void OnDestroy() {
+
+    public void OnDestroy()
+    {
         videoPlayer.loopPointReached -= EndReached;
         playVideoButton.onClick.RemoveListener(PlayVideo);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
