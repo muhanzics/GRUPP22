@@ -1,4 +1,0 @@
-repository "Grupp 22 Spel@muhanzics@cloud"
-  path "/"
-    br "/main"
-    co "/main"
