@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3Intro.unity
     guid: 14bc054411165c043b8e0066472cedb3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/OLD3Intro.unity
     guid: cf330e5d72ec8446aad4e72e7235b258
   - enabled: 1
