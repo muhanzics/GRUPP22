@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.4
+  m_fontSize: 71.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2214,8 +2214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.3667037}
   m_AnchorMax: {x: 0.5401042, y: 0.5}
-  m_AnchoredPosition: {x: -370.54193, y: 123}
-  m_SizeDelta: {x: 209.9341, y: -42.5831}
+  m_AnchoredPosition: {x: -377.89966, y: 130.35773}
+  m_SizeDelta: {x: 195.2186, y: -27.8676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944852923
 MonoBehaviour:
@@ -2246,8 +2246,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 8f4fc1c40c64349468cd1b8d4de4270a, type: 3}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: b124f4ce558274bb8abc2b21e588f590, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b124f4ce558274bb8abc2b21e588f590, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
