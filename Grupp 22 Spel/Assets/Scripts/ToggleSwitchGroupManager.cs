@@ -31,7 +31,7 @@ public class ToggleSwitchGroupManager : MonoBehaviour
 
         _toggleSwitches.Add(toggleSwitch);
 
-        toggleSwitch.SetupForManager(this);
+        //toggleSwitch.SetupForManager(this);
     }
 
     private void Start()
@@ -67,7 +67,7 @@ public class ToggleSwitchGroupManager : MonoBehaviour
                 if (button == null)
                     continue;
 
-                Button.ToggleByGroupManager(valueToSetTo: false);
+                //Button.ToggleByGroupManager(valueToSetTo: false);
             }
         }
         else
@@ -77,8 +77,8 @@ public class ToggleSwitchGroupManager : MonoBehaviour
                 if (button == null)
                     continue;
 
-                if (button == toggleSwitch)
-                    Button.ToggleByGroupManager(valueToSetTo: true);
+                //if (button == toggleSwitch)
+                   // Button.ToggleByGroupManager(valueToSetTo: true);
                 else
                     button.ToggleByGroupManager(valueToSetTo: false);
             }
@@ -86,12 +86,12 @@ public class ToggleSwitchGroupManager : MonoBehaviour
 
 
     }
-    public class ToggleSwitchGroupManager : MonoBehavior
-    {
+    //public class ToggleSwitchGroupManager : MonoBehavior
+    //{
 
-        public void ToggleGroup(ToggleSwitch toggleSwitch)
-        {
+       // public void ToggleGroup(ToggleSwitch toggleSwitch)
+       // {
 
-        }
-    }
+        //}
+    //}
 }
