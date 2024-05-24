@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/6Computer.unity
     guid: 6847384d0086b4c3abe9f9e38dd9c9cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/7Note.unity
     guid: 42013fb4fb8cfd4418b38cfaaedacf77
   - enabled: 1
