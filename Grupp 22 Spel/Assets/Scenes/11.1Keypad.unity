@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 538911881}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: SoundEffect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5481,3 +5481,4 @@ SceneRoots:
   - {fileID: 1926090646}
   - {fileID: 538911882}
   - {fileID: 1324076775182697120}
+  - {fileID: 61984630}
