@@ -201,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1676318146830899648, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
       propertyPath: delay
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5002378205570334873, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
       propertyPath: m_Name
