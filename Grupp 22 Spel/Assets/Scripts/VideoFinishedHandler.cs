@@ -42,8 +42,6 @@ public class VideoFinishedHandler : MonoBehaviour
         }
 
         videoPlayer.Stop();
-
-        // Vänta tills fade-out-effekten är klar innan nästa scen laddas
         yield return new WaitForSeconds(fadeOutDuration);
 
         LoadNextScene();
@@ -51,7 +49,7 @@ public class VideoFinishedHandler : MonoBehaviour
 
     void LoadNextScene()
     {
-        // Ladda nästa scen
+        // Ladda nï¿½sta scen
         SceneManager.LoadScene("2IntroductionToBeingKidnapped");
     }
 }
