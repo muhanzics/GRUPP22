@@ -10,7 +10,9 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - ELEGANT TYPEWRITER
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 019ff2bda6aa74ec3bbe58b3429b349d, type: 3}
+  - {fileID: 12800000, guid: 68401d3acead6462f88c70599d92f452, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
