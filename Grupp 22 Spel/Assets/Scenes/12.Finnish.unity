@@ -220,6 +220,7 @@ RectTransform:
   - {fileID: 565157909}
   - {fileID: 652692527}
   - {fileID: 560128337}
+  - {fileID: 1348235407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -494,8 +495,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Congratulations! \nyou managed to escape and you passed the game!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f8a106a0a3944090aa2a90ddbce906b, type: 2}
+  m_sharedMaterial: {fileID: -3250321587204268872, guid: 1f8a106a0a3944090aa2a90ddbce906b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -811,7 +812,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1348235407
 Transform:
@@ -822,11 +823,11 @@ Transform:
   m_GameObject: {fileID: 1348235406}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 115141606}
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!199 &1348235408
 ParticleSystemRenderer:
@@ -841,7 +842,7 @@ ParticleSystemRenderer:
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 1
+  m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -924,9 +925,9 @@ ParticleSystem:
   autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
-    minMaxState: 3
-    scalar: 0.1
-    minScalar: 0.05
+    minMaxState: 0
+    scalar: 0
+    minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -5769,4 +5770,3 @@ SceneRoots:
   - {fileID: 115141606}
   - {fileID: 1375547004}
   - {fileID: 1509963698}
-  - {fileID: 1348235407}

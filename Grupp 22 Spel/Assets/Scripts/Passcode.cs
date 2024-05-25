@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Passcode : MonoBehaviour
 {
-    string Code = "4753"; 
+    string Code = "4758"; 
     string Nr = null; 
     int NrIndex = 0; 
     public Text UiText = null; 
@@ -32,7 +32,7 @@ public class Passcode : MonoBehaviour
         if (Nr == Code)
         {
             Debug.Log("Correct code entered.");
-            SceneManager.LoadScene("WIP");
+            SceneManager.LoadScene("12.Finnish");
         }
         else
         {
