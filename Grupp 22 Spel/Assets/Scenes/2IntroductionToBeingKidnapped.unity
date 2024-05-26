@@ -201,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1676318146830899648, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
       propertyPath: delay
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5002378205570334873, guid: 07a54725b9d26e1459382ed889d099d9, type: 3}
       propertyPath: m_Name
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1760476396}
-  fadeOutDuration: 2
+  fadeOutDuration: 0.5
   blackOverlay: {fileID: 147466042}
   fadeTrigger1: {fileID: 1357585715}
   fadeTrigger2: {fileID: 1105492944}

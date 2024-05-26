@@ -3087,8 +3087,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 62}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 34, y: 90}
+  m_SizeDelta: {x: 378, y: 55.4071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4079655552499688522
 CanvasRenderer:
@@ -3118,7 +3118,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: .......
+  m_text: "Hint: What does the note really mean? \r\n\nHint: Find 4 numbers hidden
+    in the game. \r\n\nHint: Investigate the items in the box and you will find freedom. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e8ad51f29df8446b86e2cd0d80deae3, type: 2}
   m_sharedMaterial: {fileID: -6598158151821128467, guid: 0e8ad51f29df8446b86e2cd0d80deae3, type: 2}
@@ -3145,8 +3146,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
