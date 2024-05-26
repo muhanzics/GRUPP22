@@ -4,28 +4,56 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private List<AudioSource> allAudioSources = new List<AudioSource>();
+    private Dictionary<AudioSource, float> originalVolumes = new Dictionary<AudioSource, float>();
+    private bool isSoundOn = true;
 
     void Start()
     {
         // Hämta alla AudioSource-komponenter i scenen
         AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
-        allAudioSources.AddRange(audioSources);
+
+        // För varje AudioSource, spara den ursprungliga volymen
+        foreach (AudioSource audioSource in audioSources)
+        {
+            if (audioSource.CompareTag("SoundEffect"))
+            {
+                originalVolumes[audioSource] = audioSource.volume;
+                Debug.Log("Saved volume for " + audioSource.name + ": " + audioSource.volume);
+            }
+            else
+            {
+                Debug.Log("AudioSource " + audioSource.name + " does not have the tag 'SoundEffect'.");
+            }
+        }
 
         // För felsökning, skriv ut antal AudioSource-komponenter som hittades
         Debug.Log("Found " + audioSources.Length + " audio sources in the scene.");
+
+        // Sätt initialt ljudtillstånd för att säkerställa att volymerna är korrekta
+        SetSoundState(isSoundOn);
     }
 
-    public void SetSoundEffectsVolume(float volume)
+    public void ToggleSound()
     {
-        Debug.Log("Slider volume: " + volume); // Skriv ut volymvärdet från sliden
-        foreach (AudioSource audioSource in allAudioSources)
+        isSoundOn = !isSoundOn;
+        Debug.Log("Toggled sound. Sound is now " + (isSoundOn ? "On" : "Off"));
+        SetSoundState(isSoundOn);
+    }
+
+    public void SetSoundState(bool soundOn)
+    {
+        Debug.Log("SetSoundState called with soundOn: " + soundOn);
+        foreach (var entry in originalVolumes)
         {
-            // Kontrollera att ljudeffekter har taggen "SoundEffect"
-            if (audioSource.CompareTag("SoundEffect"))
+            AudioSource audioSource = entry.Key;
+            if (audioSource != null)
             {
-                audioSource.volume = volume;
-                Debug.Log("Set volume for " + audioSource.name + " to " + volume); // Skriv ut vilken ljudkälla som uppdateras
+                audioSource.volume = soundOn ? entry.Value : 0f;
+                Debug.Log("Set volume for " + audioSource.name + " to " + audioSource.volume + " (soundOn: " + soundOn + ")");
+            }
+            else
+            {
+                Debug.LogWarning("AudioSource is null for an entry in originalVolumes.");
             }
         }
     }
