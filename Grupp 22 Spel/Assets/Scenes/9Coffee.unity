@@ -569,19 +569,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_AnchorMin.x
@@ -593,11 +593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1449,6 +1449,8 @@ GameObject:
   - component: {fileID: 1168085054}
   - component: {fileID: 1168085053}
   - component: {fileID: 1168085052}
+  - component: {fileID: 1168085057}
+  - component: {fileID: 1168085058}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1545,50 +1547,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1238844286
-GameObject:
+--- !u!222 &1168085057
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1238844287}
-  - component: {fileID: 1238844289}
-  - component: {fileID: 1238844288}
-  m_Layer: 5
-  m_Name: Screen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1238844287
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238844286}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1377239709}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2000, y: 1300}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1238844288
+  m_GameObject: {fileID: 1168085051}
+  m_CullTransparentMesh: 1
+--- !u!114 &1168085058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238844286}
+  m_GameObject: {fileID: 1168085051}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
@@ -1609,14 +1582,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!222 &1238844289
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238844286}
-  m_CullTransparentMesh: 1
 --- !u!1 &1377239708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,7 +1611,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1238844287}
   - {fileID: 64875898}
   m_Father: {fileID: 1168085055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2333,7 +2297,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 3
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
@@ -2361,7 +2325,7 @@ Transform:
   m_GameObject: {fileID: 2068116626}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
