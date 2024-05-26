@@ -5341,6 +5341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSourceClick
       objectReference: {fileID: 0}
+    - target: {fileID: 621079060285009978, guid: 5874ee7703920426d9abdc669ce80790, type: 3}
+      propertyPath: m_TagString
+      value: SoundEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 5750029283044435825, guid: 5874ee7703920426d9abdc669ce80790, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1141.8873
