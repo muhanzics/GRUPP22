@@ -65,6 +65,13 @@ public class RandomizePuzzle : MonoBehaviour
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
+
+            // Play the click sound
+            AudioSource audioSource = grid[x, y].GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
         }
 
         ToggleAdjacent(x - 1, y);
