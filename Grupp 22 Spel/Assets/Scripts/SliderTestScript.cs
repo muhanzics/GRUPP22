@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoBehaviour
+public class SlideScript : MonoBehaviour
 {
     public Slider slider;        // Reference to the Slider
     public GameObject panel;     // Reference to the Panel
