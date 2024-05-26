@@ -1,35 +1,54 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.Video;
+
 public class VideoFinishedHandler : MonoBehaviour
 {
-
     public VideoPlayer videoPlayer;
-    public float fadeOutDuration = 10.0f; // Justera fade out-duration vid behov
+    public float fadeOutDuration = 10.0f; // Adjust fade-out duration if needed
     private bool isFadingOut = false;
-    private bool hasVideoFinished = false;
     public Image blackOverlay;
+    public GameObject fadeTrigger1;
+    public GameObject fadeTrigger2;
 
-    // Start is called before the first frame update
     void Start()
     {
         videoPlayer.loopPointReached += OnVideoFinished;
+
+        // Add listeners for the fade triggers
+        if (fadeTrigger1 != null)
+        {
+            fadeTrigger1.GetComponent<Button>().onClick.AddListener(OnFadeTriggerClicked);
+        }
+
+        if (fadeTrigger2 != null)
+        {
+            fadeTrigger2.GetComponent<Button>().onClick.AddListener(OnFadeTriggerClicked);
+        }
     }
 
     public void OnVideoFinished(VideoPlayer vp)
     {
-            if (!isFadingOut)
-            {
-                hasVideoFinished = true;
-                StartCoroutine(FadeOutAndLoadNextScene());
-            }
+        if (!isFadingOut)
+        {
+            StartCoroutine(FadeOutAndLoadNextScene());
         }
+    }
+
+    public void OnFadeTriggerClicked()
+    {
+        if (!isFadingOut)
+        {
+            StartCoroutine(FadeOutAndLoadNextScene());
+        }
+    }
 
     IEnumerator FadeOutAndLoadNextScene()
     {
+        isFadingOut = true; // Ensure the fade-out process doesn't start multiple times
+
         float timer = 0f;
         Color color = blackOverlay.color;
 
@@ -43,14 +62,5 @@ public class VideoFinishedHandler : MonoBehaviour
 
         videoPlayer.Stop();
         yield return new WaitForSeconds(fadeOutDuration);
-
-        LoadNextScene();
-    }
-
-    void LoadNextScene()
-    {
-        // Ladda n�sta scen
-        SceneManager.LoadScene("2IntroductionToBeingKidnapped");
     }
 }
-

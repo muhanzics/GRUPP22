@@ -34,7 +34,7 @@ public class ToggleSwitch : MonoBehaviour, IPointerClickHandler
     {
         SetupToggleComponents();
 
-        _slider.value = sliderValue;
+        //_slider.value = sliderValue;
     }
 
     private void SetupToggleComponents()
