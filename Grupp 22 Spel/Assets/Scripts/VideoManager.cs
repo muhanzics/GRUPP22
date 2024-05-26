@@ -8,11 +8,13 @@ using UnityEngine.Video;
 public class VideoManager : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
+    public AudioSource audioSource; 
     public Button playVideoButton;
     public Canvas CanvasMain;
     public Canvas VideoCanvas;
     private static bool hasPlayedOnce = false; 
     private double lastFrameTime; 
+
     void Start()
     {
         playVideoButton.onClick.AddListener(PlayVideo);
@@ -24,6 +26,7 @@ public class VideoManager : MonoBehaviour
             lastFrameTime = PlayerPrefs.GetFloat("LastFrameTime", 0);
             videoPlayer.time = lastFrameTime;
             videoPlayer.Pause();
+            audioSource.Pause(); 
         }
     }
 
@@ -34,6 +37,7 @@ public class VideoManager : MonoBehaviour
             CanvasMain.enabled = false;
             VideoCanvas.enabled = true;
             videoPlayer.Play();
+            audioSource.Play(); 
             playVideoButton.gameObject.SetActive(false);
         }
         else
@@ -42,6 +46,7 @@ public class VideoManager : MonoBehaviour
             VideoCanvas.enabled = true;
             videoPlayer.time = lastFrameTime;
             videoPlayer.Pause();
+            audioSource.Pause();
         }
     }
 
@@ -50,6 +55,7 @@ public class VideoManager : MonoBehaviour
         lastFrameTime = videoPlayer.frameCount / videoPlayer.frameRate;
         videoPlayer.time = lastFrameTime;
         videoPlayer.Pause();
+        audioSource.Pause(); 
         hasPlayedOnce = true;
 
         PlayerPrefs.SetInt("VideoPlayedOnce", 1);
