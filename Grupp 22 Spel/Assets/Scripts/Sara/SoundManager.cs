@@ -9,10 +9,8 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        // Hämta alla AudioSource-komponenter i scenen
         AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
 
-        // För varje AudioSource, spara den ursprungliga volymen
         foreach (AudioSource audioSource in audioSources)
         {
             if (audioSource.CompareTag("SoundEffect"))
@@ -26,10 +24,8 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        // För felsökning, skriv ut antal AudioSource-komponenter som hittades
         Debug.Log("Found " + audioSources.Length + " audio sources in the scene.");
 
-        // Sätt initialt ljudtillstånd för att säkerställa att volymerna är korrekta
         SetSoundState(isSoundOn);
     }
 
