@@ -20,44 +20,43 @@ public class RandomizePuzzle : MonoBehaviour
         grid = new GameObject[columns, rows];
         GenerateCustomGrid();
         RandomizeInitialState(minimumXSwitches: 5);
-    }
+    } //start
 
-    void GenerateCustomGrid()
+    void GenerateCustomGrid() {
+    float cellWidth = 120f;
+    float cellHeight = 120f;
+    float spacing = 150f;
+
+    float totalWidth = columns * (cellWidth + spacing) - spacing;
+    float totalHeight = rows * (cellHeight + spacing) - spacing;
+
+    Vector2 startPosition = new Vector2(-totalWidth / 2, -totalHeight / 2);
+
+    for (int x = 0; x < columns; x++)
     {
-        float cellWidth = 120f;
-        float cellHeight = 120f;
-        float spacing = 150f;
-
-        Vector2 startPosition = new Vector2(
-            -(columns - 1) * (cellWidth + spacing) / 2,
-            -(rows - 1) * (cellHeight + spacing) / 2
-        );
-
-        for (int x = 0; x < columns; x++)
+        for (int y = 0; y < rows; y++)
         {
-            for (int y = 0; y < rows; y++)
-            {
-                GameObject tile = Instantiate(tilePrefab, tilesParent);
-                tile.GetComponent<RectTransform>().anchoredPosition = new Vector2(
-                    startPosition.x + x * (cellWidth + spacing),
-                    startPosition.y + y * (cellHeight + spacing)
-                );
+            GameObject tile = Instantiate(tilePrefab, tilesParent);
+            tile.GetComponent<RectTransform>().anchoredPosition = new Vector2(
+                startPosition.x + x * (cellWidth + spacing),
+                startPosition.y + y * (cellHeight + spacing)
+            );
 
-                Image tileImage = tile.GetComponent<Image>();
-                tileImage.sprite = spriteX;
+            Image tileImage = tile.GetComponent<Image>();
+            tileImage.sprite = spriteX;
 
-                Button tileButton = tile.GetComponent<Button>();
-                int capturedX = x, capturedY = y;
-                tileButton.onClick.AddListener(() => ToggleTile(capturedX, capturedY));
+            Button tileButton = tile.GetComponent<Button>();
+            int capturedX = x, capturedY = y;
+            tileButton.onClick.AddListener(() => ToggleTile(capturedX, capturedY));
 
-                grid[x, y] = tile;
-            }
-        }
+            grid[x, y] = tile;
+        }// inner for
+    }// outer for
 
-        winPanel.alpha = 0;
-        winPanel.interactable = false;
-        winPanel.blocksRaycasts = false;
-    }
+    winPanel.alpha = 0;
+    winPanel.interactable = false;
+    winPanel.blocksRaycasts = false;
+} // generatecustomgrid
 
     void ToggleTile(int x, int y)
     {
@@ -65,14 +64,13 @@ public class RandomizePuzzle : MonoBehaviour
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
-
-            // Play the click sound
+            
             AudioSource audioSource = grid[x, y].GetComponent<AudioSource>();
             if (audioSource != null)
             {
                 audioSource.Play();
-            }
-        }
+            }//inner if
+        }// outer if
 
         ToggleAdjacent(x - 1, y);
         ToggleAdjacent(x + 1, y);
@@ -80,7 +78,7 @@ public class RandomizePuzzle : MonoBehaviour
         ToggleAdjacent(x, y + 1);
 
         CheckWinCondition();
-    }
+    }// toggletile
 
     void ToggleAdjacent(int x, int y)
     {
@@ -88,8 +86,8 @@ public class RandomizePuzzle : MonoBehaviour
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
-        }
-    }
+        }// if
+    } // toggleadjacent
 
     void RandomizeInitialState(int minimumXSwitches)
     {
@@ -107,8 +105,8 @@ public class RandomizePuzzle : MonoBehaviour
             int randomX = Random.Range(0, columns);
             int randomY = Random.Range(0, rows);
             ToggleSingleTile(randomX, randomY);
-        }
-    }
+        } // for
+    } //randomizeinitialstate
 
     void EnsureXCount(int targetXCount, ref int xCount, ref int oCount)
     {
@@ -124,9 +122,9 @@ public class RandomizePuzzle : MonoBehaviour
                 tileImage.sprite = spriteX;
                 xCount++;
                 oCount--;
-            }
-        }
-    }
+            } //if
+        } //while
+    } //ensureXcount
 
     void ToggleSingleTile(int x, int y)
     {
@@ -134,8 +132,8 @@ public class RandomizePuzzle : MonoBehaviour
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
-        }
-    }
+        }// if
+    }//togglesingletile
 
     void CountTiles(ref int xCount, ref int oCount)
     {
@@ -150,14 +148,14 @@ public class RandomizePuzzle : MonoBehaviour
                 if (tileImage.sprite == spriteX)
                 {
                     xCount++;
-                }
+                }//if
                 else
                 {
                     oCount++;
-                }
-            }
-        }
-    }
+                }//else
+            }//inner for
+        }//outer for
+    }// counttiles
 
     void CheckWinCondition()
     {
@@ -171,16 +169,16 @@ public class RandomizePuzzle : MonoBehaviour
                 {
                     allO = false;
                     break;
-                }
-            }
-            if (!allO) break;
-        }
+                }// inner if
+            }//inner for
+            if (!allO) break; // outer if
+        }//for
 
         if (allO)
         {
             StartCoroutine(ShowWinPanel());
-        }
-    }
+        }// if
+    }// checkwincondition
 
     IEnumerator ShowWinPanel()
     {
@@ -196,8 +194,8 @@ public class RandomizePuzzle : MonoBehaviour
             winPanel.alpha = Mathf.Lerp(0, 1, elapsed / fadeDuration);
             elapsed += Time.deltaTime;
             yield return null;
-        }
+        }//while
 
         winPanel.alpha = 1;
-    }
-}
+    }//showwinpanel
+}//end

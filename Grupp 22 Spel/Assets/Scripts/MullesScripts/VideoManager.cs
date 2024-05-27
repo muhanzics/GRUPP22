@@ -29,7 +29,6 @@ public class VideoManager : MonoBehaviour
             audioSource.Pause(); 
         }
     }
-
     public void PlayVideo()
     {
         if (!hasPlayedOnce)
@@ -49,7 +48,6 @@ public class VideoManager : MonoBehaviour
             audioSource.Pause();
         }
     }
-
     public void EndReached(VideoPlayer vp)
     {
         lastFrameTime = videoPlayer.frameCount / videoPlayer.frameRate;
@@ -62,7 +60,6 @@ public class VideoManager : MonoBehaviour
         PlayerPrefs.SetFloat("LastFrameTime", (float)lastFrameTime);
         PlayerPrefs.Save();
     }
-
     public void OnDestroy()
     {
         videoPlayer.loopPointReached -= EndReached;

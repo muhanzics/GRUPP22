@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Import the SceneManagement namespace
+using UnityEngine.SceneManagement;
 
 public class SliderLoadScene : MonoBehaviour
 {
@@ -16,9 +16,7 @@ public class SliderLoadScene : MonoBehaviour
     void Start()
     {
         startValue = slider.value;
-        slider.onValueChanged.AddListener(OnSliderValueChanged);
     }
-
     void Update()
     {
         if (!isDragging && slider.value != startValue)
@@ -26,12 +24,10 @@ public class SliderLoadScene : MonoBehaviour
             slider.value = Mathf.Lerp(slider.value, startValue, Time.deltaTime * returnSpeed);
         }
     }
-
     public void OnPointerDown()
     {
         isDragging = true;
     }
-
     public void OnPointerUp()
     {
         isDragging = false;
@@ -41,11 +37,6 @@ public class SliderLoadScene : MonoBehaviour
             slider.value = startValue;
         }
     }
-
-    private void OnSliderValueChanged(float value)
-    {
-    }
-
     private IEnumerator FadeOutSliderAndLoadScene()
     {
         float elapsedTime = 0f;

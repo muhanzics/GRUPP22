@@ -4,23 +4,22 @@ using UnityEngine.UI;
 
 public class SlideScript : MonoBehaviour
 {
-    public Slider slider;        // Reference to the Slider
-    public GameObject panel;     // Reference to the Panel
-    public CanvasGroup sliderCanvasGroup; // CanvasGroup for the Slider to control its visibility
-    public CanvasGroup panelCanvasGroup;  // CanvasGroup for the Panel to control its visibility
-    public float returnSpeed = 2f; // Speed at which the slider returns to start
-    public float fadeDuration = 0.5f; // Duration of the fade effect
+    public Slider slider;        
+    public GameObject panel;     
+    public CanvasGroup sliderCanvasGroup; 
+    public CanvasGroup panelCanvasGroup;  
+    public float returnSpeed = 2f; 
+    public float fadeDuration = 0.5f; 
 
-    private float startValue;    // Initial value of the Slider
-    private bool isDragging;     // To check if the slider is being dragged
+    private float startValue;    
+    private bool isDragging;     
 
     void Start()
     {
         startValue = slider.value;
-        panel.SetActive(false); // Ensure the panel is initially hidden
-        panelCanvasGroup.alpha = 0; // Set initial alpha to 0
-        sliderCanvasGroup.alpha = 1; // Set initial alpha to 1
-        slider.onValueChanged.AddListener(OnSliderValueChanged);
+        panel.SetActive(false); 
+        panelCanvasGroup.alpha = 0; 
+        sliderCanvasGroup.alpha = 1; 
     }
 
     void Update()
@@ -42,18 +41,12 @@ public class SlideScript : MonoBehaviour
         if (slider.value >= slider.maxValue)
         {
             StartCoroutine(FadeOutSliderAndFadeInPanel());
-            slider.value = startValue; // Reset the slider to the start value
+            slider.value = startValue; 
         }
     }
-
-    private void OnSliderValueChanged(float value)
-    {
-        // Additional logic can be placed here if needed when the slider value changes
-    }
-
     private IEnumerator FadeOutSliderAndFadeInPanel()
     {
-        panel.SetActive(true); // Ensure the panel is active before fading in
+        panel.SetActive(true); 
 
         float elapsedTime = 0f;
 
@@ -65,9 +58,8 @@ public class SlideScript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        sliderCanvasGroup.alpha = 0; // Ensure the slider is fully transparent
-        panelCanvasGroup.alpha = 1;  // Ensure the panel is fully opaque
-        slider.gameObject.SetActive(false); // Optionally deactivate the slider after fading out
+        sliderCanvasGroup.alpha = 0; 
+        panelCanvasGroup.alpha = 1;  
+        slider.gameObject.SetActive(false); 
     }
 }
