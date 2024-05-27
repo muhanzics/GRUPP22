@@ -393,6 +393,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1251566447}
     m_Modifications:
+    - target: {fileID: 121173712654641256, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 585903256172121952, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 589666351444441372, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -473,9 +481,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1290328281527241546, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353435484543900506, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4205515028198727137, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582982176435480580, guid: 015f9a1e9b0548649804f2ac6278d729, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
