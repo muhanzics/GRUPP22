@@ -388,8 +388,8 @@ MonoBehaviour:
   columns: 3
   tilePrefab: {fileID: 4463116813847459093, guid: 2ac109db8af362f48bb0e149154a7124, type: 3}
   tilesParent: {fileID: 971085930}
-  spriteX: {fileID: 21300000, guid: 2ef4da72fdd7cd74da35d63bd566cb0e, type: 3}
-  spriteO: {fileID: 21300000, guid: bf4a56e6b8535ff4c9411bc180c2b25d, type: 3}
+  spriteX: {fileID: 21300000, guid: 9e9d473428ee4004da1940341b1ce69d, type: 3}
+  spriteO: {fileID: 21300000, guid: 13a71fcad6ca2ec4298f8a00c4847140, type: 3}
 --- !u!1 &539827418
 GameObject:
   m_ObjectHideFlags: 0

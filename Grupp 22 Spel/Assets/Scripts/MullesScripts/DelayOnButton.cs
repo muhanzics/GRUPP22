@@ -12,7 +12,7 @@ public class DelayedButtonActivation : MonoBehaviour
     {
         button.gameObject.SetActive(false);
         Invoke("ActivateButton", delayTime);
-    }
+    } // start
 
     void ActivateButton()
     {
@@ -21,10 +21,7 @@ public class DelayedButtonActivation : MonoBehaviour
 
             StartCoroutine(FadeInCoroutine(button.image));
         }
-        else {
-            Debug.LogWarning("button ref is null"); //Throw exeception
-        }
-    }
+    } //activate button
     IEnumerator FadeInCoroutine(Image image) {
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0f);
         float increment = Time.deltaTime/fadeInDuration;
@@ -32,6 +29,6 @@ public class DelayedButtonActivation : MonoBehaviour
             image.color = new Color(image.color.r, image.color.g, image.color.b, image.color.a + increment);
             yield return null;
         }
-    }
+    } //fadeincoroutine
 
-}
+}//delayedbuttonactivation
