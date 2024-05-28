@@ -9,15 +9,15 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
     [SerializeField] string sceneToLoad = "GameOverScene";
-    [SerializeField] GameObject pausePanel1; // Reference to the first panel
-    [SerializeField] GameObject pausePanel2; // Reference to the second panel
-    [SerializeField] Button pauseButton; // Reference to the button that can also pause the timer
+    [SerializeField] GameObject pausePanel1; 
+    [SerializeField] GameObject pausePanel2; 
+    [SerializeField] Button pauseButton; 
 
     private bool isTimerPaused;
 
     void Start()
     {
-        // Add listener for the button click event
+        
         if (pauseButton != null)
         {
             pauseButton.onClick.AddListener(OnPauseButtonClicked);
@@ -26,11 +26,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        // Check if either pause panel is active or the timer is manually paused
+        
         if (isTimerPaused || (pausePanel1 != null && pausePanel1.activeSelf) || 
             (pausePanel2 != null && pausePanel2.activeSelf))
         {
-            return; // If either panel is active or the timer is paused, do nothing (pause the timer)
+            return; 
         }
 
         if (remainingTime > 0)
@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
 
     private void OnPauseButtonClicked()
     {
-        // Pause the timer when the button is clicked
+        
         isTimerPaused = true;
     }
 }
