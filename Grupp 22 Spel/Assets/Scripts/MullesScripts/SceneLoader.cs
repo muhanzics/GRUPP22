@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,9 +10,9 @@ public class SceneLoader : MonoBehaviour
         sceneToLoad = sceneName;
         Invoke("LoadWithDelay", delay);
         
-    }
+    }//loadscene
     private void LoadWithDelay() {
         SceneManager.LoadScene(sceneToLoad);
-    }
+    }//loadwithdelay
     
-}
+}//sceneloader

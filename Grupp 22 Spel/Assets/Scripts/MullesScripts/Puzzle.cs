@@ -17,7 +17,7 @@ public class Puzzle : MonoBehaviour
         grid = new GameObject[columns, rows];
         GenerateCustomGrid();
         RandomizeInitialState(8);
-    }
+    } //start
     void GenerateCustomGrid()
     {
         float cellWidth = 120f; 
@@ -41,7 +41,7 @@ public class Puzzle : MonoBehaviour
                 tile.GetComponent<RectTransform>().anchoredPosition = new Vector2(
                     startPosition.x + x * (cellWidth + spacing),
                     startPosition.y + y * (cellHeight + spacing)
-                );
+                ); //if
 
                 Image tileImage = tile.GetComponent<Image>();
                 tileImage.sprite = spriteX;
@@ -51,9 +51,9 @@ public class Puzzle : MonoBehaviour
                 tileButton.onClick.AddListener(() => ToggleTile(capturedX, capturedY));
 
                 grid[x, y] = tile;
-            }
-        }
-    }
+            }//inner for
+        }//for
+    }//generatecustomgrid
 
     void ToggleTile(int x, int y)
     {
@@ -61,20 +61,20 @@ public class Puzzle : MonoBehaviour
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
-        }
+        }//if
         ToggleAdjacent(x - 1, y); 
         ToggleAdjacent(x + 1, y); 
         ToggleAdjacent(x, y - 1); 
         ToggleAdjacent(x, y + 1); 
-    }
+    }//toggletile
     void ToggleAdjacent(int x, int y)
     {
         if (x >= 0 && x < columns && y >= 0 && y < rows && grid[x, y] != null)
         {
             Image tileImage = grid[x, y].GetComponent<Image>();
             tileImage.sprite = tileImage.sprite == spriteX ? spriteO : spriteX;
-        }
-    }
+        }//if
+    }//toggleadjacent
 void RandomizeInitialState(int shuffleCount)
     {
         for (int i = 0; i < shuffleCount; i++)
@@ -82,7 +82,7 @@ void RandomizeInitialState(int shuffleCount)
             int randomX = Random.Range(0, columns);
             int randomY = Random.Range(0, rows);
             ToggleTile(randomX, randomY);
-        }
+        }//for
         grid[columns / 2, rows / 2].GetComponent<Image>().sprite = spriteX;
-    }
-}
+    }//randomizeinitialstate
+}//puzzle

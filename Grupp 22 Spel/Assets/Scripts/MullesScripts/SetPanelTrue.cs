@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SetPanelTrue : MonoBehaviour
 {
@@ -9,11 +6,11 @@ public class SetPanelTrue : MonoBehaviour
     void Start()
     {
         panel.SetActive(false);
-    }
+    } //start
     public void TogglePanel() {
         panel.SetActive(!panel.activeSelf);
-    }
+    } //togglepanel
     public void TogglePanelOff() {
         panel.SetActive(panel.activeSelf);
-    }
-}
+    }//togglepaneloff
+}//setpaneltrue

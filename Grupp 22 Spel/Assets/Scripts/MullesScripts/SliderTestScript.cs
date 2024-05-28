@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SlideScript : MonoBehaviour
+public class SlideTestScript : MonoBehaviour
 {
     public Slider slider;        
     public GameObject panel;     
@@ -20,20 +20,20 @@ public class SlideScript : MonoBehaviour
         panel.SetActive(false); 
         panelCanvasGroup.alpha = 0; 
         sliderCanvasGroup.alpha = 1; 
-    }
+    }//start
 
     void Update()
     {
         if (!isDragging && slider.value != startValue)
         {
             slider.value = Mathf.Lerp(slider.value, startValue, Time.deltaTime * returnSpeed);
-        }
-    }
+        }//if
+    }//update
 
     public void OnPointerDown()
     {
         isDragging = true;
-    }
+    }//onpointerdown
 
     public void OnPointerUp()
     {
@@ -42,8 +42,8 @@ public class SlideScript : MonoBehaviour
         {
             StartCoroutine(FadeOutSliderAndFadeInPanel());
             slider.value = startValue; 
-        }
-    }
+        }//if
+    }//onpointerup
     private IEnumerator FadeOutSliderAndFadeInPanel()
     {
         panel.SetActive(true); 
@@ -57,9 +57,9 @@ public class SlideScript : MonoBehaviour
             panelCanvasGroup.alpha = alpha;
             elapsedTime += Time.deltaTime;
             yield return null;
-        }
+        }//while
         sliderCanvasGroup.alpha = 0; 
         panelCanvasGroup.alpha = 1;  
         slider.gameObject.SetActive(false); 
-    }
-}
+    }//fadeoutsliderandfadeinpanel
+}//slidetestscript

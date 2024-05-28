@@ -16,18 +16,18 @@ public class SliderLoadScene : MonoBehaviour
     void Start()
     {
         startValue = slider.value;
-    }
+    }//start
     void Update()
     {
         if (!isDragging && slider.value != startValue)
         {
             slider.value = Mathf.Lerp(slider.value, startValue, Time.deltaTime * returnSpeed);
-        }
-    }
+        }//if
+    }//update
     public void OnPointerDown()
     {
         isDragging = true;
-    }
+    }//onpointerdown
     public void OnPointerUp()
     {
         isDragging = false;
@@ -35,8 +35,8 @@ public class SliderLoadScene : MonoBehaviour
         {
             StartCoroutine(FadeOutSliderAndLoadScene());
             slider.value = startValue;
-        }
-    }
+        }//if
+    }//onpointerup
     private IEnumerator FadeOutSliderAndLoadScene()
     {
         float elapsedTime = 0f;
@@ -45,17 +45,17 @@ public class SliderLoadScene : MonoBehaviour
         if (sliderCanvasGroup == null)
         {
             sliderCanvasGroup = slider.gameObject.AddComponent<CanvasGroup>();
-        }
+        }//if
         while (elapsedTime < fadeDuration)
         {
             float alpha = elapsedTime / fadeDuration;
             sliderCanvasGroup.alpha = 1 - alpha;
             elapsedTime += Time.deltaTime;
             yield return null;
-        }
+        }//while
         sliderCanvasGroup.alpha = 0; 
         slider.gameObject.SetActive(false); 
 
         SceneManager.LoadScene(sceneToLoad);
-    }
-}
+    }//fadeoutsliderandloadscee
+}//slider loadscene
