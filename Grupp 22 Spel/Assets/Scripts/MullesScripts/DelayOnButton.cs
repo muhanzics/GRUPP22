@@ -20,7 +20,7 @@ public class DelayedButtonActivation : MonoBehaviour
             button.gameObject.SetActive(true);
 
             StartCoroutine(FadeInCoroutine(button.image));
-        }
+        }//while
     } //activate button
     IEnumerator FadeInCoroutine(Image image) {
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0f);
@@ -28,7 +28,7 @@ public class DelayedButtonActivation : MonoBehaviour
         while(image.color.a < 1f) {
             image.color = new Color(image.color.r, image.color.g, image.color.b, image.color.a + increment);
             yield return null;
-        }
+        }//while
     } //fadeincoroutine
 
 }//delayedbuttonactivation

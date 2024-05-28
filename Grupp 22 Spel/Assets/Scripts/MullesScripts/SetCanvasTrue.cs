@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CanvasManager : MonoBehaviour
+public class SetCanvasManager : MonoBehaviour
 {
     public GameObject mainCanvas;
     public GameObject secondaryCanvas;
@@ -9,17 +9,17 @@ public class CanvasManager : MonoBehaviour
     {
         mainCanvas.SetActive(true);
         secondaryCanvas.SetActive(false);
-    }
+    }//start
 
     public void OpenSecondaryCanvas()
     {
         mainCanvas.SetActive(false);
         secondaryCanvas.SetActive(true);
-    }
+    }//openseondarycanvas
 
     public void CloseSecondaryCanvas()
     {
         secondaryCanvas.SetActive(false);
         mainCanvas.SetActive(true);
-    }
-}
+    }//closesecondarycanvas
+}//canvasmanager
